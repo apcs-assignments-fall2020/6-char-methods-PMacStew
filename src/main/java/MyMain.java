@@ -48,23 +48,25 @@ public class MyMain {
 
 
     public static void main(String[] args) {
-        boolean question = true;
-        String letterChoice = "";
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a letter: ");
-        char ch = scan.next().charAt(0);
+        char ch = scan.nextLine().charAt(0);
         System.out.print("Would you like to change this letter to uppercase or lowercase: ");
-        while (question) {
-            letterChoice = scan.nextLine();
-            if (letterChoice.toUpperCase().equals("UPPERCASE")) {
-                System.out.println("The uppercase form of your letter is " + toUpper(ch));
-                question = false; }
-            else if (letterChoice.toUpperCase().equals("LOWERCASE")) {
-                System.out.println("The lowercase form of you letter is " + toLower(ch));
-                question = false; }
-            else
-                System.out.println("Invalid input. Try again.");
-        }
+        String letterChoice = scan.nextLine();
+        if (letterChoice.toUpperCase().equals("UPPERCASE")) 
+            System.out.println("The uppercase form of your letter is: " + toUpper(ch));
+        else if (letterChoice.toUpperCase().equals("LOWERCASE")) 
+            System.out.println("The lowercase form of you letter is: " + toLower(ch));
+        System.out.print("Enter a string: ");
+        String inputStr = scan.nextLine();
+        System.out.print("Would you like to change this string to uppercase or lowercase: ");
+        String stringChoice = scan.nextLine();
+        if (stringChoice.toUpperCase().equals("UPPERCASE"))
+            System.out.println("The uppercase form of your string is: " + myToUpperCase(inputStr));
+        else if (stringChoice.toUpperCase().equals("LOWERCASE"))
+            System.out.println("The lowercase form of your string is: " + myToLowerCase(inputStr));
+        
+
 
         
     }
